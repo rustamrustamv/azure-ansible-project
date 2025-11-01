@@ -18,12 +18,12 @@ Second, **Ansible** is used to automatically configure these "blank" servers int
 
 ```mermaid
 graph TD
-    A(DevOps Engineer) -- 1. terraform apply --> B[Azure Cloud];
-    B -- 2. Provisions --> C(2x Ubuntu VMs);
-    B -- 3. Provisions --> D(VNet / NSG / IPs);
-    
-    A -- 4. ansible-playbook --> E(Ansible Control Node (Local WSL/Ubuntu));
-    
+    A[DevOps Engineer] -->|1. terraform apply| B[Azure Cloud]
+    B -->|2. Provisions| C[2x Ubuntu VMs]
+    B -->|3. Provisions| D[VNet / NSG / IPs]
+
+    A -->|4. ansible-playbook| E[Ansible Control Node: Local WSL/Ubuntu]
+
     subgraph "Terraform Provisioning"
         B
         C
@@ -34,8 +34,8 @@ graph TD
         E
     end
 
-    E -- SSH --> C;
-    C -- HTTP --> F(User);
+    E -->|SSH| C
+    C -->|HTTP| F[User]
 
 ```
 
