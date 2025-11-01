@@ -37,7 +37,7 @@ graph TD
     E -- SSH --> C;
     C -- HTTP --> F(User);
 
-    ```
+```
 
 **Workflow:**
 
