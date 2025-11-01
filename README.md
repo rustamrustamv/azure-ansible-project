@@ -22,7 +22,7 @@ graph TD
     B -- 2. Provisions --> C(2x Ubuntu VMs);
     B -- 3. Provisions --> D(VNet / NSG / IPs);
     
-    A -- 4. ansible-playbook --> E(Ansible Control Node<br/>(Local WSL/Ubuntu));
+    A -- 4. ansible-playbook --> E(Ansible Control Node (Local WSL/Ubuntu));
     
     subgraph "Terraform Provisioning"
         B
@@ -62,7 +62,7 @@ graph TD
 
 ### 2. Ansible Playbook (Configuration)
 ![Ansible Playbook](screenshots/02-ansible-playbook.png)
-*The `ansible-playbook` run, showing `ok=4, changed=3` for both `vm1` and `vm2`, confirming all tasks were successfully executed.*
+*The `ansible-playbook` run, showing `ok=5, changed=3` for both `vm1` and `vm2`, confirming all tasks were successfully executed.*
 
 ### 3. Final Result (Web Server)
 ![NGINX Web Server](screenshots/03-web-server-vm1.png)
