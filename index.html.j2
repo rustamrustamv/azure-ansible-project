@@ -1,0 +1,10 @@
+<html>
+  <head>
+    <title>Welcome to Server {{ inventory_hostname }}</title>
+  </head>
+  <body>
+    <h1>Hello! This page was configured by Ansible.</h1>
+    <p>This server's hostname is: <strong>{{ inventory_hostname }}</strong></p>
+    <p>This server's IP is: <strong>{{ ansible_host }}</strong></p>
+  </body>
+</html>

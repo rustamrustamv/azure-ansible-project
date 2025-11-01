@@ -1,0 +1,26 @@
+# playbook.yml
+---
+- name: Install and configure NGINX web server
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: 1. Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: 2. Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: 3. Create a custom index.html page
+      ansible.builtin.template:
+        src: index.html.j2
+        dest: /var/www/html/index.html
+
+    - name: 4. Start and enable nginx service
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes

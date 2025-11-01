@@ -1,0 +1,11 @@
+# .gitignore
+
+# Terraform state files - these contain secrets!
+*.tfstate
+*.tfstate.*
+
+# Terraform provider binaries
+.terraform/
+
+# Crash log
+crash.log
